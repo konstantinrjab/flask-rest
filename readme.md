@@ -1,4 +1,4 @@
 ```shell script
 docker-compose up -d
-docker exec -it pok_python python manage.py db init
+docker exec -it pok_python python manage.py db upgrade
 ```
