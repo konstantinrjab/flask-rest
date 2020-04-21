@@ -1,0 +1,4 @@
+mysqlclient
+flask
+Flask-Migrate
+Flask-SQLAlchemy
