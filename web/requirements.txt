@@ -1,4 +1,5 @@
 mysqlclient
 flask
 Flask-Migrate
+Flask-Script
 Flask-SQLAlchemy

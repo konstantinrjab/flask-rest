@@ -5,6 +5,8 @@ services:
     container_name: pok_python
     build:
       context: web
+    environment:
+      APP_SETTINGS: 'config.DevelopmentConfig'
     volumes:
       - ./web:/app
     ports:
