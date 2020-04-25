@@ -3,9 +3,9 @@ version: '3'
 services:
   web:
     container_name: pok_python
-    image: konstantinrjab/python_poker
-#    build:
-#      context: web
+#    image: konstantinrjab/python_poker
+    build:
+      context: web
     environment:
       APP_SETTINGS: 'config.DevelopmentConfig'
     volumes:
