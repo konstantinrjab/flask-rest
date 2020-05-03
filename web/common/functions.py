@@ -1,4 +1,4 @@
-from flask_restful import abort
+from flask import abort
 
 
 def abort_on_entity_not_found():

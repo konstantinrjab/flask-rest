@@ -1,15 +1,15 @@
 import json
 from flask import jsonify, request
-from flask_restful import Resource
+from flask_rest_jsonapi import ResourceDetail, ResourceList
 from common.functions import abort_on_entity_not_found
 
 
-class TableSingle(Resource):
+class TableDetail(ResourceDetail):
     def get(self, id):
         table = Table.query.get(id)
         if table is None:
             abort_on_entity_not_found()
-        return json.loads(json.dumps(table.serialize))
+        return jsonify(table.serialize)
 
     def put(self, id):
         table = Table.query.get(id)
@@ -27,7 +27,7 @@ class TableSingle(Resource):
         return '', 204
 
 
-class TableList(Resource):
+class TableList(ResourceList):
     def get(self):
         return jsonify([i.serialize for i in Table.query.all()])
 
@@ -36,7 +36,7 @@ class TableList(Resource):
 
         db.session.add(table)
         db.session.commit()
-        return json.loads(json.dumps(table.serialize))
+        return jsonify(table.serialize)
 
 
 from tables.models import Table
